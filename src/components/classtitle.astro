@@ -1,0 +1,23 @@
+---
+export interface Props {
+  title: string;
+}
+const {title} = Astro.props;
+---
+
+<h1>{title}</h1>
+
+<canvas class="webgl"></canvas>
+
+<style>
+  h1 {
+    text-align: center;
+    margin: 5px 0;
+    padding: 5px 0;
+  }
+
+  .webgl {
+    display: block;
+    margin: auto;
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ClassTitle from '../../components/classtitle.astro';
+---
+
+<Layout title="Animations">
+
+  <ClassTitle title="Animations" />
+
+  <script>
+    import * as THREE from 'three'
+
+    const sizes = {
+      width: 600,
+      height: 400
+    }
+
+    const scene = new THREE.Scene()
+
+    const camara = new THREE.PerspectiveCamara(75, sizes.width / sizes.height)
+    camara.position.z = 3
+    scene.add(camara)
+
+    const canvas = document.querySelector('webgl')
+
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas
+    })
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.render(scene, camara)
+  </script>
+
+</Layout>
