@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ClassTitle2 from '../../components/classtitle2.astro';
+---
+
+<Layout title="Full Screen and Resizing">
+
+  <ClassTitle2 title="Full Screen and Resizing" />
+
+  <script>
+    import * as THREE from 'three'
+    import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+
+    const sizes = {
+      width: window.innerWidth,
+      height: window.innerHeight
+    }
+
+    // Resize event
+    window.addEventListener('resize', () => {
+      // Update sizes
+      sizes.width = window.innerWidth
+      sizes.height = window.innerHeight
+
+      // Update camera
+      camera.aspect = sizes.width / sizes.height
+      camera.updateProjectionMatrix()
+
+      // Update Renderer
+      renderer.setSize(sizes.width, sizes.height)
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    })
+
+    // Full Screen Event
+    window.addEventListener('dblclick', () => {
+
+      const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement
+
+      if(!fullscreenElement){
+        if(canvas.requestFullscreen){
+          canvas.requestFullscreen()
+        } else if(canvas.webkitRequestFullscreen){
+          canvas.webkitRequestFullscreen()
+        }
+      } else {
+        if(document.exitFullscreen){
+          document.exitFullscreen()
+        } else if(document.webkitExitFullscreen){
+          document.webkitExitFullscreen()
+        }
+      }
+    })
+
+    // Scene
+    const scene = new THREE.Scene()
+
+    // Object
+    const mesh = new THREE.Mesh(
+      new THREE.BoxGeometry(1, 1, 1, 5, 5, 5),
+      new THREE.MeshBasicMaterial({ color: 'red' })
+    )
+    scene.add(mesh)
+
+    // Camera
+    const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
+    camera.position.z = 3
+    scene.add(camera)
+
+    // Canvas
+    const canvas = document.querySelector('canvas')
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas
+    })
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.render(scene, camera)
+
+    // Orbit Controls
+    const controls = new OrbitControls(camera, canvas)
+    controls.enableDamping = true
+    controls.autoRotate = true
+
+    // Animation
+    const animation = () => {
+
+      // Render
+      window.requestAnimationFrame(animation)
+      controls.update()
+      renderer.render(scene, camera)
+      
+    }
+    animation()
+
+  </script>
+
+</Layout>
