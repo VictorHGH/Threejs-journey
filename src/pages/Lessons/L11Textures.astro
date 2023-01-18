@@ -12,6 +12,46 @@ import Classtitle2 from '../../components/classtitle2.astro';
     import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
     /**
+     * Textures
+     */
+    const loadingManager = new THREE.LoadingManager()
+
+    loadingManager.onStart = () => {
+      console.log('onStart')
+    }
+
+    loadingManager.onLoad = () => {
+      console.log('onLoad')
+    }
+    
+    loadingManager.onProgress = () => {
+      console.log('onProgress')
+    }
+
+    loadingManager.onError = () => {
+      console.log('onError')
+    }
+
+    const textureLoader = new THREE.TextureLoader(loadingManager)
+    const colorTexture = textureLoader.load('/public/color.jpg')
+    const alphaTexture = textureLoader.load('/public/alpha.jpg')
+    const heightTexture = textureLoader.load('/public/height.png')
+    const normalTexture = textureLoader.load('/public/normal.jpg')
+    const ambientOcclusionTexture = textureLoader.load('/public/AO.jpg')
+    const metalnessTexture = textureLoader.load('/public/metalness.jpg')
+    const roughnessTexture = textureLoader.load('/public/roughness.jpg')
+
+    colorTexture.repeat.x = 2
+    colorTexture.repeat.y = 3
+    colorTexture.wrapS = THREE.RepeatWrapping
+    colorTexture.wrapT = THREE.RepeatWrapping
+
+    colorTexture.offset.x = 0.5
+    colorTexture.offset.y = 0.5
+
+    colorTexture.rotation = Math.PI * 0.25
+
+    /**
      * Base
      */
     // Canvas
@@ -24,7 +64,7 @@ import Classtitle2 from '../../components/classtitle2.astro';
      * Object
      */
     const geometry = new THREE.BoxGeometry(1, 1, 1)
-    const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
+    const material = new THREE.MeshBasicMaterial({ map: colorTexture })
     const mesh = new THREE.Mesh(geometry, material)
     scene.add(mesh)
 
