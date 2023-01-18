@@ -11,12 +11,15 @@
   },
   "devDependencies": {
     "@types/three": "^0.143.2",
+    "standard": "^17.0.0",
     "astro": "^1.1.2"
   },
   "dependencies": {
-    "eslint": "^8.25.0",
     "gsap": "^3.5.1",
     "lil-gui": "^0.17.0",
     "three": "^0.143.0"
+  }
+  "eslintConfig": {
+    "extends": "standard"
   }
 }
