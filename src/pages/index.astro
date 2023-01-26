@@ -2,24 +2,39 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="VHGH ThreeJS Journey">
 
   <h1>ThreeJS Journey</h1>
 
-  <h2>Basics</h2>
-  <ol>
-    <li><a href="./Lessons/L3BasicScene">Basic Scene</a></li>
-    <li><a href="./Lessons/L5TranformObjects">Transform Objects</a></li>
-    <li><a href="./Lessons/L6Animations">Animations</a></li>
-    <li><a href="./Lessons/L7Cameras">Cameras</a></li>
-    <li><a href="./Lessons/L8FullScreenAndResizing">Full Screen and Resizing</a></li>
-    <li><a href="./Lessons/L9Geometries">Geometries</a></li>
-    <li><a href="./Lessons/L10DebugUI">Debug UI</a></li>
-    <li><a href="./Lessons/L11Textures">Textures</a></li>
-    <li><a href="./Lessons/L12Materials">Materials</a></li>
-    <li><a href="./Lessons/L133DText">3D Text</a></li>
-    <li><a href="./Lessons/L14GoLive">Go live</a></li>
-  </ol>
+  <div class='grid1'>
+    
+    <div>
+      <h2>1. Basics</h2>
+      <ol>
+        <li><a href="./Lessons/L3BasicScene">Basic Scene</a></li>
+        <li><a href="./Lessons/L5TranformObjects">Transform Objects</a></li>
+        <li><a href="./Lessons/L6Animations">Animations</a></li>
+        <li><a href="./Lessons/L7Cameras">Cameras</a></li>
+        <li><a href="./Lessons/L8FullScreenAndResizing">Full Screen and Resizing</a></li>
+        <li><a href="./Lessons/L9Geometries">Geometries</a></li>
+        <li><a href="./Lessons/L10DebugUI">Debug UI</a></li>
+        <li><a href="./Lessons/L11Textures">Textures</a></li>
+        <li><a href="./Lessons/L12Materials">Materials</a></li>
+        <li><a href="./Lessons/L133DText">3D Text</a></li>
+        <li><a href="./Lessons/L14GoLive">Go live</a></li>
+      </ol>
+
+    </div>
+
+    <div>
+      
+      <h2>2. Classic techniques</h2>
+      <ol>
+        <li><a href="./Lessons/L15Lights">Lights</a></li>
+      </ol>
+
+    </div>
+  </div>
 
 </Layout>
 
@@ -27,7 +42,6 @@ import Layout from '../layouts/Layout.astro';
 h1, h2 {
     text-align: center;
     margin: 8px;
-    background-color: hsl(120, 60%, 70%);
     padding: 5px;
     border-radius: 5px;
   }
@@ -41,5 +55,12 @@ h2 {
     justify-content: center;
     gap: 5px;
   }
+.grid1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 5px;
+  justify-content: center;
+  /* margin: 5px; */
+}
 
 </style>
