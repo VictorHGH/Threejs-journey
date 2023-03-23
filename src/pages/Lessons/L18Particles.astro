@@ -28,15 +28,46 @@ import ClassTitle2 from '../../components/classtitle2.astro';
      * Textures
      */
     const textureLoader = new THREE.TextureLoader()
+    const particleTexture = textureLoader.load('/textures/particles/2.png')
 
-    /**
-     * Test cube
+   /**
+     * Particles
      */
-    const cube = new THREE.Mesh(
-        new THREE.BoxGeometry(1, 1, 1),
-        new THREE.MeshBasicMaterial()
-    )
-    scene.add(cube)
+
+    // Geometry
+    const particlesGeometry = new THREE.BufferGeometry(1, 32, 32)
+    const count = 2000
+
+    const positon = new Float32Array(count * 3)
+    const colors = new Float32Array(count * 3)
+
+    for(let i = 0; i < count * 3; i++)
+    {
+        positon[i] = (Math.random() - 0.5) * 10
+        colors[i] = Math.random()
+    }
+
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positon, 3))
+    particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
+
+    // Material
+    const particlesMaterial = new THREE.PointsMaterial()
+    particlesMaterial.size = 0.1
+    particlesMaterial.sizeAttenuation = true
+    // particlesMaterial.color = new THREE.Color('#00ff00')
+    particlesMaterial.transparent = true
+    particlesMaterial.alphaMap = particleTexture
+    particlesMaterial.vertexColors = true
+
+    /* Options to solution alpha problems */
+    // particlesMaterial.alphaTest = 0.001
+    // particlesMaterial.depthTest = false
+    particlesMaterial.depthWrite = false
+    particlesMaterial.blending = THREE.AdditiveBlending
+
+    // Points
+    const particles = new THREE.Points(particlesGeometry, particlesMaterial)
+    scene.add(particles)
 
     /**
      * Sizes
@@ -89,16 +120,33 @@ import ClassTitle2 from '../../components/classtitle2.astro';
 
     const tick = () =>
     {
-        const elapsedTime = clock.getElapsedTime()
+      const elapsedTime = clock.getElapsedTime()
 
-        // Update controls
-        controls.update()
+      // Update particles
+      // Mover todas las particulas a la vez
+      // particles.rotation.y = elapsedTime * 0.02
+      // particles.rotation.x = elapsedTime * 0.02
+      // particles.rotation.z = elapsedTime * 0.02
 
-        // Render
-        renderer.render(scene, camera)
+      // Mover cada particula de forma individual
+      for(let i = 0; i < count; i++)
+      {
+        const i3 = i * 3
 
-        // Call tick again on the next frame
-        window.requestAnimationFrame(tick)
+        const x = particlesGeometry.attributes.position.array[i3]
+        particlesGeometry.attributes.position.array[i3 + 1] = Math.sin(elapsedTime + x)
+      }
+
+      particlesGeometry.attributes.position.needsUpdate = true
+
+      // Update controls
+      controls.update()
+
+      // Render
+      renderer.render(scene, camera)
+
+      // Call tick again on the next frame
+      window.requestAnimationFrame(tick)
     }
 
     tick()
