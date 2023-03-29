@@ -44,28 +44,34 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-h1, h2 {
-    text-align: center;
-    margin: 8px;
-    padding: 5px;
-    border-radius: 5px;
-  }
 
-h2 {
-  background-color: hsl(190, 60%, 80%);
-}
+  h1, h2 {
+      text-align: center;
+      margin: 8px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+  h2 {
+    background-color: hsl(190, 60%, 80%);
+    max-width: 300px;
+    margin: 15px auto;
+  }
 
   ol {
     display: grid;
     justify-content: center;
     gap: 5px;
   }
-.grid1 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 5px;
-  justify-content: center;
-  /* margin: 5px; */
-}
+
+  .grid1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* margin: 5px; */
+  }
 
 </style>
