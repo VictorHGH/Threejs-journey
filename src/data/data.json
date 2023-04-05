@@ -1,0 +1,108 @@
+[
+  [
+    {
+      "imagePath": "/images/03BasicScene.png",
+      "imageAlt": "03 Basic Scene",
+      "classPath": "./Lessons/L3BasicScene",
+      "classTitle": "3. Basic Scene"
+    },
+    {
+      "imagePath": "/images/05TransformObjects.png",
+      "imageAlt": "05 Transform Objects",
+      "classPath": "./Lessons/L5TranformObjects",
+      "classTitle": "5. Transform Objects"
+    },
+    {
+      "imagePath": "/images/06Animations.png",
+      "imageAlt": "0 6Animations",
+      "classPath": "./Lessons/L6Animations",
+      "classTitle": "6. Animations"
+    },
+    {
+      "imagePath": "/images/07Cameras.png",
+      "imageAlt": "07 Cameras",
+      "classPath": "./Lessons/L7Cameras",
+      "classTitle": "7. Cameras"
+    },
+    {
+      "imagePath": "/images/08FullScreenAndResizing.png",
+      "imageAlt": "08 Full Screen And Resizing",
+      "classPath": "./Lessons/L8FullScreenAndResizing",
+      "classTitle": "8. Full Screen and Resizing"
+    },
+    {
+      "imagePath": "/images/09Geometries.png",
+      "imageAlt": "09 Geometries",
+      "classPath": "./Lessons/L9Geometries",
+      "classTitle": "9. Geometries"
+    },
+    {
+      "imagePath": "/images/10DebugUI.png",
+      "imageAlt": "10 Debug UI",
+      "classPath": "./Lessons/L10DegugUI",
+      "classTitle": "10. Debug UI"
+    },
+    {
+      "imagePath": "/images/11Textures.png",
+      "imageAlt": "11 Textures",
+      "classPath": "./Lessons/L11Textures",
+      "classTitle": "11. Textures"
+    },
+    {
+      "imagePath": "/images/12Materials.png",
+      "imageAlt": "12 Materials",
+      "classPath": "./Lessons/L12Materials",
+      "classTitle": "12. Materials"
+    },
+    {
+      "imagePath": "/images/133DText.png",
+      "imageAlt": "13 3D Text",
+      "classPath": "./Lessons/L133DText",
+      "classTitle": "13. 3D Text"
+    },
+    {
+      "imagePath": "/images/14GoLive.png",
+      "imageAlt": "14 Go Live",
+      "classPath": "./Lessons/L14GoLive",
+      "classTitle": "14. Go Live"
+    }
+  ],
+  [
+    {
+      "imagePath": "/images/15Lights.png",
+      "imageAlt": "15 Lights",
+      "classPath": "./Lessons/L15Lights",
+      "classTitle": "15. Lights"
+    },
+    {
+      "imagePath": "/images/16Shadows.png",
+      "imageAlt": "16 Shadows",
+      "classPath": "./Lessons/L16Shadows",
+      "classTitle": "16 Shadows"
+    },
+    {
+      "imagePath": "/images/17HauntedHouse.png",
+      "imageAlt": "17 Haunted House",
+      "classPath": "./Lessons/L17HauntedHouse",
+      "classTitle": "17. Haunted House"
+    },
+    {
+      "imagePath": "/images/18Particles.png",
+      "imageAlt": "18 Particles",
+      "classPath": "./Lessons/L18Particles",
+      "classTitle": "18. Particles"
+    },
+    {
+      "imagePath": "/images/19GalaxyGenerator.png",
+      "imageAlt": "19 Galaxy Generator",
+      "classPath": "./Lessons/L19GalaxyGenerator",
+      "classTitle": "19. Galaxy Generator"
+    },
+    {
+      "imagePath": "/images/EnConstruccion.png",
+      "imageAlt": "20 Scroll Base Animation",
+      "classPath": "./Lessons/L20ScrollBaseAnimation",
+      "classTitle": "20. Scroll Base Animation"
+    }
+  ]
+]

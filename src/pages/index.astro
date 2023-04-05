@@ -1,27 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/card.astro';
+
+import data from '../data/data.json';
+const basics = data[0]
+const classic = data[1]
 ---
 
 <Layout title="VHGH ThreeJS Journey">
 
   <h1>ThreeJS Journey</h1>
 
-  <div class='grid1'>
+  <div class='grid'>
     
     <div>
       <h2>1. Basics</h2>
       <ol>
-        <li><a href="./Lessons/L3BasicScene">Basic Scene</a></li>
-        <li><a href="./Lessons/L5TranformObjects">Transform Objects</a></li>
-        <li><a href="./Lessons/L6Animations">Animations</a></li>
-        <li><a href="./Lessons/L7Cameras">Cameras</a></li>
-        <li><a href="./Lessons/L8FullScreenAndResizing">Full Screen and Resizing</a></li>
-        <li><a href="./Lessons/L9Geometries">Geometries</a></li>
-        <li><a href="./Lessons/L10DebugUI">Debug UI</a></li>
-        <li><a href="./Lessons/L11Textures">Textures</a></li>
-        <li><a href="./Lessons/L12Materials">Materials</a></li>
-        <li><a href="./Lessons/L133DText">3D Text</a></li>
-        <li><a href="./Lessons/L14GoLive">Go live</a></li>
+        {
+          basics.map((item) => {
+            return (
+              <Card
+                imagePath={item.imagePath}
+                imageAlt={item.imageAlt}
+                classPath={item.classPath}
+                classTitle={item.classTitle}
+              />
+            )
+          })
+        }
       </ol>
 
     </div>
@@ -30,12 +36,18 @@ import Layout from '../layouts/Layout.astro';
       
       <h2>2. Classic techniques</h2>
       <ol>
-        <li><a href="./Lessons/L15Lights">Lights</a></li>
-        <li><a href="./Lessons/L16Shadows">Shadows</a></li>
-        <li><a href="./Lessons/L17HauntedHouse">Haunted House</a></li>
-        <li><a href="./Lessons/L18Particles">Particles</a></li>
-        <li><a href="./Lessons/L19GalaxyGenerator">Galaxy Generator</a></li>
-        <li><a href="./Lessons/L20ScrollBasedAnimation">Scroll Based Animation</a></li>
+        {
+          classic.map((item) => {
+            return (
+              <Card
+                imagePath={item.imagePath}
+                imageAlt={item.imageAlt}
+                classPath={item.classPath}
+                classTitle={item.classTitle}
+              />
+            )
+          })
+        }
       </ol>
 
     </div>
@@ -47,31 +59,38 @@ import Layout from '../layouts/Layout.astro';
 
   h1, h2 {
       text-align: center;
-      margin: 8px;
-      padding: 5px;
-      border-radius: 5px;
     }
+
+  h1 {
+    margin: 20px auto;
+  }
 
   h2 {
     background-color: hsl(190, 60%, 80%);
-    max-width: 300px;
-    margin: 15px auto;
+    box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.1);
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+    margin: 0 auto 15px auto;
   }
 
   ol {
     display: grid;
-    justify-content: center;
-    gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    margin-bottom: 30px;
   }
 
-  .grid1 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 5px;
-    justify-content: center;
+  li {
+    text-align: center;
+  }
+
+  .grid{
     max-width: 1000px;
-    margin: 0 auto;
-    /* margin: 5px; */
+    margin: auto;
+    padding: 0 15px;
   }
 
 </style>

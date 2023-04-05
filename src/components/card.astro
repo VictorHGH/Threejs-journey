@@ -1,0 +1,47 @@
+---
+export interface Props {
+  imagePath: string,
+  imageAlt: string,
+  classPath: string,
+  classTitle: string,
+  classNumber: string
+}
+const {imagePath, imageAlt, classPath, classTitle, classNumber} = Astro.props
+---
+
+<li>
+  <div class='card'>
+    <img src={imagePath} alt={imageAlt}/>
+    <a class='button' href={classPath}>{classTitle}</a>
+  </div>
+</li>
+
+<style>
+
+li {
+  text-align: center;
+  list-style: none;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.1);
+}
+
+img {
+  width:100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: fill;
+}
+
+.button{
+  background-color: hsl(190, 60%, 80%);
+  border-radius: 10px;
+  padding: 10px 2px;
+  width: 80%;
+  margin: 5px auto;
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+</style>
