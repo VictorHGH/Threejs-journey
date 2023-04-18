@@ -101,7 +101,7 @@
     {
       "imagePath": "/images/EnConstruccion.png",
       "imageAlt": "20 Scroll Base Animation",
-      "classPath": "./Lessons/L20ScrollBaseAnimation",
+      "classPath": "./Lessons/L20ScrollBasedAnimation",
       "classTitle": "20. Scroll Base Animation"
     }
   ]
