@@ -10,12 +10,15 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@types/three": "0.150.1",
-    "astro": "2.3.0"
+    "@types/three": "0.159.0",
+    "astro": "^4.0.3"
   },
   "dependencies": {
-    "gsap": "3.11.5",
-    "lil-gui": "0.18.1",
-    "three": "0.151.3"
+    "gsap": "3.12.3",
+    "lil-gui": "0.19.1",
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2",
+    "three": "0.159.0",
+    "typescript": "^5.3.3"
   }
 }
