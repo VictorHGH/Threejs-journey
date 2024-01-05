@@ -1,18 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/card.astro";
 
-import data from '../data/data.json';
-const basics = data[0]
-const classic = data[1]
+import data from "../data/data.json";
+const basics = data[0];
+const classic = data[1];
+const advanced = data[2];
 ---
 
 <Layout title="VHGH ThreeJS Journey">
-
   <h1>ThreeJS Journey</h1>
 
-  <div class='container'>
-    
+  <div class="container">
     <div>
       <h2>1. Basics</h2>
       <ol>
@@ -25,15 +24,13 @@ const classic = data[1]
                 classPath={item.classPath}
                 classTitle={item.classTitle}
               />
-            )
+            );
           })
         }
       </ol>
-
     </div>
 
     <div>
-      
       <h2>2. Classic techniques</h2>
       <ol>
         {
@@ -45,21 +42,37 @@ const classic = data[1]
                 classPath={item.classPath}
                 classTitle={item.classTitle}
               />
-            )
+            );
           })
         }
       </ol>
+    </div>
 
+    <div>
+      <h2>3. Advanced techniques</h2>
+      <ol>
+        {
+          advanced.map((item) => {
+            return (
+              <Card
+                imagePath={item.imagePath}
+                imageAlt={item.imageAlt}
+                classPath={item.classPath}
+                classTitle={item.classTitle}
+              />
+            );
+          })
+        }
+      </ol>
     </div>
   </div>
-
 </Layout>
 
 <style>
-
-  h1, h2 {
-      text-align: center;
-    }
+  h1,
+  h2 {
+    text-align: center;
+  }
 
   h1 {
     margin: 20px auto;
@@ -67,7 +80,7 @@ const classic = data[1]
 
   h2 {
     background-color: hsl(190, 60%, 80%);
-    box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.1);
     padding: 5px;
     border-radius: 10px;
     width: 100%;
@@ -87,10 +100,9 @@ const classic = data[1]
     text-align: center;
   }
 
-  .container{
+  .container {
     max-width: 1000px;
     margin: auto;
     padding: 0 15px;
   }
-
 </style>

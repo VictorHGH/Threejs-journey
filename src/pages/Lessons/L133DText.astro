@@ -8,7 +8,7 @@ import ClassTitle2 from "../../components/classtitle2.astro";
 
   <script>
     import * as THREE from "three";
-    import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+    import { OrbitControls } from "three/addons/controls/OrbitControls.js";
     import * as dat from "lil-gui";
     import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
     import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
@@ -67,8 +67,6 @@ import ClassTitle2 from "../../components/classtitle2.astro";
       const text = new THREE.Mesh(textGeometry, material);
       scene.add(text);
 
-      console.time("donuts");
-
       const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45);
 
       for (let i = 0; i < 500; i++) {
@@ -86,7 +84,6 @@ import ClassTitle2 from "../../components/classtitle2.astro";
 
         scene.add(donut);
       }
-      console.timeEnd("donuts");
     });
 
     /**
@@ -119,7 +116,7 @@ import ClassTitle2 from "../../components/classtitle2.astro";
       75,
       sizes.width / sizes.height,
       0.1,
-      100
+      100,
     );
     camera.position.x = 1;
     camera.position.y = 1;

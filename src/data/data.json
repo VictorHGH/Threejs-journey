@@ -99,10 +99,18 @@
       "classTitle": "19. Galaxy Generator"
     },
     {
-      "imagePath": "/images/EnConstruccion.png",
+      "imagePath": "/images/20ScrollBaseAnimation.png",
       "imageAlt": "20 Scroll Base Animation",
       "classPath": "./Lessons/L20ScrollBasedAnimation",
       "classTitle": "20. Scroll Base Animation"
+    }
+  ],
+  [
+    {
+    "imagePath": "/images/EnConstruccion.png",
+    "imageAlt": "Physics",
+    "classPath": "./Lessons/L21Physics",
+    "classTitle": "21. Physics"
     }
   ]
 ]
